@@ -1,0 +1,63 @@
+/*
+  Design tokens — see docs/DESIGN.md.
+  [V] = sampled from reference/hero-still-1280x912.png, [I] = inferred reconstruction decision.
+*/
+:root {
+  /* Colour */
+  --color-void: #08080a; /* [V] top-left of still */
+  --color-background: #08080a; /* [V] */
+  --color-navy: #0f1523; /* [V] left-mid backdrop */
+  --color-slate: #3d4651; /* [V] mid-right backdrop */
+  --color-slate-light: #59666f; /* [V] upper centre */
+  --color-shaft: #8a9095; /* [V] light shaft highlight */
+  --color-surface: #131418; /* [I] */
+  --color-chip: rgba(255, 255, 255, 0.1); /* [V] ≈ #1f1f21 over backdrop */
+  --color-cta-solid: #000201; /* [V] */
+  --color-cta-ghost: rgba(255, 255, 255, 0.1); /* [V] ≈ #26282c */
+  --color-text-primary: #ffffff; /* [V] */
+  --color-text-secondary: rgba(255, 255, 255, 0.72); /* [I] */
+  --color-text-muted: rgba(255, 255, 255, 0.46); /* [I] */
+  --color-border: rgba(255, 255, 255, 0.18); /* [V] divider */
+  --color-border-strong: rgba(255, 255, 255, 0.3); /* [V] ghost CTA */
+  --color-violet: #a58bff; /* [I] saturated ribbon violet */
+  --color-lavender: #baadc5; /* [V] X particle core */
+
+  /* Typography [I] — see docs/DESIGN.md §4 */
+  --font-display: 'Outfit', 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --font-ui: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+
+  --fs-display: clamp(2.5rem, 4.7vw, 6.5rem); /* ≈ 60px @1280; cap-height matches 45px in the still [V] */
+  --fs-nav: clamp(0.8125rem, 1.17vw, 1.125rem); /* ≈ 15px @1280 [V] */
+  --fs-chip: clamp(0.8125rem, 1.17vw, 1.25rem); /* ≈ 15px @1280 [V] */
+  --fs-cta: clamp(0.875rem, 1.17vw, 1.25rem); /* ≈ 15px @1280 [V] */
+  --fs-tagline: clamp(0.6875rem, 1.05vw, 1.0625rem); /* ≈ 13.4px @1280 [V] */
+  --fs-h2: clamp(2.25rem, 5.4vw, 6rem); /* [I] */
+  --fs-body: clamp(1rem, 1.2vw, 1.25rem); /* [I] */
+  --fs-eyebrow: 0.75rem; /* [I] */
+
+  /* Layout */
+  --gutter: clamp(16px, 2.1vw, 44px); /* [V] 27px @1280 */
+  --header-h: clamp(40px, 2.9vw, 56px); /* [V] 37px @1280 */
+  --max-content: 1760px; /* [I] */
+  --radius-ui: 2px; /* [V] chips / CTAs */
+
+  /* Spacing scale [I] */
+  --space-1: 6px; /* [V] chip gap */
+  --space-2: 12px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 72px;
+  --space-6: clamp(96px, 12vw, 200px);
+
+  /* Motion [I] */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 420ms;
+  --dur-slow: 900ms;
+
+  --z-canvas: 0;
+  --z-content: 2;
+  --z-header: 50;
+  --z-menu: 60;
+}

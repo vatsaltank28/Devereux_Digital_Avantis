@@ -1,0 +1,79 @@
+/* Type roles — see docs/DESIGN.md §4. Fonts are [I] approximations (OFL, bundled). */
+
+.hero__word,
+.section__title,
+.menu__list a {
+  font-family: var(--font-display);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.hero__word {
+  font-size: var(--fs-display);
+}
+
+.header__link,
+.header__brand,
+.header__toggle {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-nav);
+  letter-spacing: 0.005em;
+}
+
+.chip,
+.cta {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: var(--fs-chip);
+}
+
+.hero__tagline {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-tagline);
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.chapter {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2.2vw, 2.75rem);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.section__title {
+  font-size: var(--fs-h2);
+}
+
+.section__lead {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  max-width: 34ch;
+}
+
+.section__index,
+.row__no,
+.row__meta,
+.badge,
+.section__note,
+.footer__note {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.row__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}

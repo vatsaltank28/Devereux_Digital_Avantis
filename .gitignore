@@ -1,0 +1,19 @@
+# Dependencies & build output
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Local research material (third-party template captures — not for publishing)
+reference/
+docs/
+
+# Logs / env / OS
+*.log
+npm-debug.log*
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

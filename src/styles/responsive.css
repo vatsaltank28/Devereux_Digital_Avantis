@@ -1,0 +1,136 @@
+/* Breakpoints are where the layout actually changes (docs/DESIGN.md §6). */
+
+/* Tablet: sections stack, hero bottom bar wraps */
+@media (max-width: 1024px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .section__lead {
+    max-width: 52ch;
+  }
+  .hero__bar {
+    align-items: flex-end;
+  }
+}
+
+/* Mobile / small tablet: nav collapses, hero is recomposed */
+@media (max-width: 820px) {
+  .header__list {
+    display: none;
+  }
+  .header__nav {
+    grid-template-columns: 1fr auto;
+  }
+  .header__brand {
+    grid-column: 1;
+    justify-self: start;
+  }
+  .header__rule {
+    display: none;
+  }
+  .header__brand span:not(.header__rule) {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.125rem;
+    letter-spacing: 0.02em;
+  }
+  .header__toggle {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  /* IMAGINE above the X, MANIFEST below it */
+  .hero__word {
+    font-size: clamp(2.5rem, 13vw, 4.5rem);
+  }
+  .hero__word--left {
+    top: 17%;
+    transform: none;
+  }
+  .hero__word--right {
+    top: auto;
+    bottom: 30.5%;
+    transform: none;
+  }
+  .hero__chips {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  .chip {
+    height: 38px;
+  }
+  .hero__bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px 0 max(20px, env(safe-area-inset-bottom));
+  }
+  .hero__tagline {
+    max-width: none;
+    font-size: 0.6875rem;
+  }
+  .hero__ctas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-1);
+  }
+  .cta {
+    min-width: 0;
+    height: 46px;
+    padding: 0 10px;
+    font-size: 0.875rem;
+  }
+  .chapter {
+    bottom: 22%;
+    max-width: 70vw;
+  }
+  .rail {
+    display: none;
+  }
+  .row {
+    grid-template-columns: 2.25rem 1fr;
+  }
+  .row__meta {
+    grid-column: 2;
+  }
+  .journey {
+    height: 640vh;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .hero__word {
+    font-size: 2.5rem;
+  }
+  .hero__tagline {
+    display: none;
+  }
+}
+
+/* Short landscape screens */
+@media (max-height: 520px) and (min-width: 600px) {
+  .hero__tagline,
+  .hero__chips {
+    display: none;
+  }
+}
+
+/* Large screens: cap the stage-derived sizes so the composition doesn't sprawl */
+@media (min-width: 2200px) {
+  :root {
+    --gutter: 56px;
+  }
+}
+
+/* Reduced motion: static, shorter journey, no shaft drift */
+@media (prefers-reduced-motion: reduce) {
+  .stage__shaft {
+    animation: none;
+  }
+  .journey {
+    height: 560vh;
+  }
+}
